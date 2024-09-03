@@ -1,0 +1,11 @@
+CREATE TABLE pies (
+id INTEGER PRIMARY KEY, 
+name TEXT UNIQUE,
+fruit TEXT UNIQUE,
+crust TEXT UNIQUE,
+size INTEGER,
+vegetable TEXT,
+lipid TEXT,
+pie top TEXT
+);
+
