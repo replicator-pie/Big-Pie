@@ -1,0 +1,30 @@
+CREATE DATABASE PieRecipesDB;
+USE PieRecipesDB;
+CREATE TABLE PieRecipes (
+    recipe_id INT AUTO_INCREMENT PRIMARY KEY,
+    pie_name VARCHAR(100) NOT NULL,
+    crust_type VARCHAR(50),
+    filling_type VARCHAR(50),
+    ingredients TEXT,
+    instructions TEXT,
+    cooking_time INT,
+    difficulty_level VARCHAR(20)
+);
+
+-- Insert some example pie recipes
+INSERT INTO PieRecipes (pie_name, crust_type, filling_type, ingredients, instructions, cooking_time, difficulty_level)
+VALUES
+('Apple Pie', 'Shortcrust Pastry', 'Sweet', 'Apples, Sugar, Butter, Flour, Cinnamon', 
+    '1. Preheat oven to 375°F. 2. Prepare the crust. 3. Make the apple filling. 4. Assemble the pie. 5. Bake for 50 minutes.', 
+    50, 'Medium'),
+('Chicken Pot Pie', 'Flaky Pie Crust', 'Savory', 'Chicken, Vegetables, Butter, Flour, Chicken Broth', 
+    '1. Preheat oven to 400°F. 2. Prepare the crust. 3. Make the chicken filling. 4. Assemble the pie. 5. Bake for 45 minutes.', 
+    45, 'Medium'),
+('Pumpkin Pie', 'Graham Cracker Crust', 'Sweet', 'Pumpkin puree, Sugar, Eggs, Spices, Cream', 
+    '1. Preheat oven to 350°F. 2. Prepare the crust. 3. Make the pumpkin filling. 4. Pour into crust. 5. Bake for 60 minutes.', 
+    60, 'Easy');
+
+-- Retrieve All Sweet Pies
+SELECT * FROM PieRecipes WHERE filling_type = 'Sweet';
+-- Retrieve the Easiest Savory Pie
+SELECT * FROM PieRecipes WHERE filling_type = 'Savory' AND difficulty_level = 'Easy';
